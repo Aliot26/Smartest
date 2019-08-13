@@ -1,15 +1,12 @@
 package com.codecool.smartest.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
-
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "apartments", schema = "public")
 public class Apartment {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,10 +15,12 @@ public class Apartment {
     @Column
     private int apNumber;
 
-    @OneToOne(fetch = FetchType.LAZY,
-    cascade = CascadeType.ALL)
-    @JoinColumn(name = "userId", nullable = false)
-//    @OnDelete(action = OnDeleteAction.CASCADE)
-//    @JsonIgnore
-    private User user;
+
+    @ManyToMany(targetEntity = User.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "owner",
+            joinColumns = {@JoinColumn(name = "userId")},
+            inverseJoinColumns = {@JoinColumn(name = "apId")}
+    )
+    public List<User> users = new ArrayList<>();
 }
