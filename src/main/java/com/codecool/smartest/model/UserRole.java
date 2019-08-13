@@ -7,7 +7,11 @@ import java.util.List;
 @Entity
 @Table(name="userRole", schema = "public")
 public class UserRole {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int roleId;
+
+    @Column
     private String role;
 
     @OneToMany(targetEntity=User.class, mappedBy="userRole",cascade= CascadeType.ALL, fetch = FetchType.LAZY)
