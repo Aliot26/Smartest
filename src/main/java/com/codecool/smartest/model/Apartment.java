@@ -10,11 +10,7 @@ import javax.persistence.*;
 @Table(name = "apartments", schema = "public")
 public class Apartment {
     @Id
-    @GeneratedValue(generator = "apartmentId_generator")
-    @SequenceGenerator(
-            name = "apartmentId_generator",
-            sequenceName = "apartment_sequence"
-    )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int apId;
 
     @Column
@@ -23,7 +19,7 @@ public class Apartment {
     @OneToOne(fetch = FetchType.LAZY,
     cascade = CascadeType.ALL)
     @JoinColumn(name = "userId", nullable = false)
-//    @OnDelete(action = OnDeleteAction.CASCADE)
+    @OnDelete(action = OnDeleteAction.CASCADE)
 //    @JsonIgnore
     private User user;
 }
