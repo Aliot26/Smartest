@@ -1,5 +1,9 @@
 package com.codecool.smartest.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 
 @Entity
@@ -11,11 +15,15 @@ public class Apartment {
             name = "apartmentId_generator",
             sequenceName = "apartment_sequence"
     )
-    private Long id;
+    private int apId;
 
-    @Column(name = "number")
+    @Column
     private int apNumber;
 
-    @Column(name = "userId")
-    private int userId;
+    @OneToOne(fetch = FetchType.LAZY,
+    cascade = CascadeType.ALL)
+    @JoinColumn(name = "userId", nullable = false)
+//    @OnDelete(action = OnDeleteAction.CASCADE)
+//    @JsonIgnore
+    private User user;
 }
