@@ -9,12 +9,10 @@ import javax.persistence.*;
 @Entity
 @Table(name = "apartments", schema = "public")
 public class Apartment {
+
+
     @Id
-    @GeneratedValue(generator = "apartmentId_generator")
-    @SequenceGenerator(
-            name = "apartmentId_generator",
-            sequenceName = "apartment_sequence"
-    )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int apId;
 
     @Column
