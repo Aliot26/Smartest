@@ -1,9 +1,5 @@
 package com.codecool.smartest.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +13,7 @@ public class Apartment {
     private int apId;
 
     @Column
-    private int apNumber;
+    private int number;
 
 
     @ManyToMany(targetEntity = User.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -32,7 +28,7 @@ public class Apartment {
         return apId;
     }
 
-    public int getApNumber() {
-        return apNumber;
+    public int getNumber() {
+        return number;
     }
 }

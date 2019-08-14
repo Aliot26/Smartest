@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
+/**
+ * Implementation of {@link ApartmentService} service
+ */
 public class ApartmentService implements IApartmentService {
 
     private final ApartmentRepository apartmentRepository;

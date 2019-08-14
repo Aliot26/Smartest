@@ -11,7 +11,7 @@
         <table border="1">
             <tr th:each="apartment : ${apartments}">
                 <td th:text="${apartment.getApId()}"></td>
-                <td th:text="${apartment.getApNumber()}"></td>
+                <td th:text="${apartment.getNumber()}"></td>
             </tr>
         </table>
         <!--        <a th:text="Apartments List" th:href="apartments"></a>-->
