@@ -27,4 +27,12 @@ public class Apartment {
             inverseJoinColumns = {@JoinColumn(name = "apId")}
     )
     public List<User> users = new ArrayList<>();
+
+    public int getApId() {
+        return apId;
+    }
+
+    public int getApNumber() {
+        return apNumber;
+    }
 }
