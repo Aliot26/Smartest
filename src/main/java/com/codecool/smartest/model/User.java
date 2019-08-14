@@ -16,6 +16,6 @@ public class User {
     private String password;
 
     @ManyToOne()
-    @JoinColumn(name = "roleId", referencedColumnName = "roleId", insertable = false, updatable = false)
+    @JoinColumn(name = "roleId", foreignKey = @ForeignKey(name = "users_fk_1"), referencedColumnName = "roleId", insertable = false, updatable = false)
     private UserRole userRole;
 }

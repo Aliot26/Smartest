@@ -19,8 +19,8 @@ public class Apartment {
     @ManyToMany(targetEntity = User.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(
             name = "owner",
-            joinColumns = {@JoinColumn(name = "userId")},
-            inverseJoinColumns = {@JoinColumn(name = "apId")}
+            joinColumns = {@JoinColumn(name = "userId", foreignKey = @ForeignKey(name = "apartment_fk_1"))},
+            inverseJoinColumns = {@JoinColumn(name = "apId", foreignKey = @ForeignKey(name = "user_fk_1"))}
     )
     public List<User> users = new ArrayList<>();
 
