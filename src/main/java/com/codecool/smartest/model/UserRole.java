@@ -15,5 +15,5 @@ public class UserRole {
     private String role;
 
     @OneToMany(targetEntity=User.class, mappedBy="userRole",cascade= CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<User> user = new ArrayList<>();
+    private List<User> users = new ArrayList<>();
 }
