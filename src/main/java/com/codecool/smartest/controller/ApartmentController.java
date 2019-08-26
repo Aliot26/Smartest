@@ -25,9 +25,9 @@ public class ApartmentController {
      * @param model
      * @return template name where show this data
      */
-    @GetMapping("/")
-    public String apartmentPage(Model model) {
-        model.addAttribute("apartments", apartmentRepository.findAll());
-        return "home";
-    }
+//    @GetMapping("/")
+//    public String apartmentPage(Model model) {
+//        model.addAttribute("apartments", apartmentRepository.findAll());
+//        return "home";
+//    }
 }
