@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ApartmentController {
 
-    private final ApartmentRepository apartmentRepository;
-
-    @Autowired
-    public ApartmentController(ApartmentRepository apartmentRepository) {
-        this.apartmentRepository = apartmentRepository;
-    }
+//    private final ApartmentRepository apartmentRepository;
+//
+//    @Autowired
+//    public ApartmentController(ApartmentRepository apartmentRepository) {
+//        this.apartmentRepository = apartmentRepository;
+//    }
 
     /**
      * Take data of apartments from database
