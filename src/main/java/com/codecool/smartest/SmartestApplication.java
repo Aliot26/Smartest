@@ -8,7 +8,5 @@ public class SmartestApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(SmartestApplication.class, args);
-
     }
-
 }
