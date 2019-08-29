@@ -5,13 +5,13 @@ import {Apartment} from "./apartment";
 
 @Injectable()
 export class ApartmentService {
-  private baseUrl: string;
+  private readonly baseUrl: string;
 
-  constructor (private http: HttpClient){
+  constructor(private http: HttpClient) {
     this.baseUrl = 'http://localhost:8080/apartments';
   }
 
-  public getApartmentsList(): Observable<Apartment[]>{
+  public getApartmentsList(): Observable<Apartment[]> {
     return this.http.get<Apartment[]>(this.baseUrl);
   }
 
