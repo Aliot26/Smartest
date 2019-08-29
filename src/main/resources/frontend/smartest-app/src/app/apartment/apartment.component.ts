@@ -9,12 +9,14 @@ import {ApartmentService} from "./apartment.service";
   styleUrls: ['./apartment.component.css']
 })
 export class ApartmentComponent implements OnInit {
-  apartments: Observable<Apartment[]>;
+  apartments: Apartment[];
 
   constructor(private apartmentService: ApartmentService) {}
 
   ngOnInit() {
-    this.apartmentService.getApartmentsList().subscribe(data=>this.apartments);
+    this.apartmentService.getApartmentsList().subscribe(data => {
+      this.apartments = data;
+    });
   }
 
 
