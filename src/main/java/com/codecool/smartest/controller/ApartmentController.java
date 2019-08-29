@@ -18,20 +18,18 @@ import java.util.List;
  */
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping("/api/v1")
 public class ApartmentController {
-    @Autowired
-    private ApartmentRepository apartmentRepository;
+    private final ApartmentRepository apartmentRepository;
+
+    public ApartmentController(ApartmentRepository apartmentRepository) {
+        this.apartmentRepository = apartmentRepository;
+    }
 
     @GetMapping("/apartments")
-    public List<Apartment> getAllApartments(){
+    public List<Apartment> getAllApartments() {
         return apartmentRepository.findAll();
     }
 
-//    @Autowired
-//    public ApartmentController(ApartmentRepository apartmentRepository) {
-//        this.apartmentRepository = apartmentRepository;
-//    }
 
     /**
      * Take data of apartments from database

@@ -1,17 +1,18 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {Apartment} from "./apartment";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ApartmentService {
-  constructor (private http: HttpClient){}
+  private baseUrl: string;
 
-  private baseUrl = 'http://localhost:8080/springboot-crud-rest/api/v1/apartments';
+  constructor (private http: HttpClient){
+    this.baseUrl = 'http://localhost:8080/apartments';
+  }
 
-  getApartmentsList(): Observable<any>{
-    return this.http.get('${this.baseUrl}');
+  public getApartmentsList(): Observable<Apartment[]>{
+    return this.http.get<Apartment[]>(this.baseUrl);
   }
 
 }
