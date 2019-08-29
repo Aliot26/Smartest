@@ -8,14 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 
 /**
- * Implementation of {@link ApartmentService} service
+ * Implementation of {@link ApartmentServiceImpl} service
  */
-public class ApartmentService implements IApartmentService {
+public class ApartmentServiceImpl implements IApartmentService {
 
     private final ApartmentRepository apartmentRepository;
 
     @Autowired
-    public ApartmentService(ApartmentRepository apartmentRepository) {
+    public ApartmentServiceImpl(ApartmentRepository apartmentRepository) {
         this.apartmentRepository = apartmentRepository;
     }
 
