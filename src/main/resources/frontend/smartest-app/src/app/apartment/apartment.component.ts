@@ -12,8 +12,8 @@ import {ApartmentService} from "./apartment.service";
 export class ApartmentComponent implements OnInit {
   apartments: Observable<Apartment[]>;
 
-  constructor(private apartmentService: ApartmentService,
-              private router: Router) {}
+  constructor(private apartmentService: ApartmentService) {}
+
   ngOnInit() {
     this.reloadData();
   }
