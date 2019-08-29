@@ -1,24 +1,37 @@
 package com.codecool.smartest.controller;
 
+import com.codecool.smartest.model.Apartment;
 import com.codecool.smartest.repository.ApartmentRepository;
 import com.codecool.smartest.service.impl.ApartmentServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * Controller for the {@link ApartmentServiceImpl}
  */
-@Controller
+@RestController
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("/api/v1")
 public class ApartmentController {
-
-    private final ApartmentRepository apartmentRepository;
-
     @Autowired
-    public ApartmentController(ApartmentRepository apartmentRepository) {
-        this.apartmentRepository = apartmentRepository;
+    private ApartmentRepository apartmentRepository;
+
+    @GetMapping("/apartments")
+    public List<Apartment> getAllApartments(){
+        return apartmentRepository.findAll();
     }
+
+//    @Autowired
+//    public ApartmentController(ApartmentRepository apartmentRepository) {
+//        this.apartmentRepository = apartmentRepository;
+//    }
 
     /**
      * Take data of apartments from database
