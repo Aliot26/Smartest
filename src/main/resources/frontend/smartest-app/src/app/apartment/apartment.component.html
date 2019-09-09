@@ -8,15 +8,19 @@
       <tr>
         <th>Id</th>
         <th>Number</th>
+        <th>Update</th>
+        <th>Delete</th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let apartment of apartments">
         <td>{{apartment.apId}}</td>
         <td>{{apartment.apNumber}}</td>
-
+        <td><button class="btn btn-success">Update</button></td>
+        <td><button class="btn btn-warning">Delete</button></td>
       </tr>
       </tbody>
     </table>
+    <button class="btn btn-success">Add</button>
   </div>
 </div>

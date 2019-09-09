@@ -5,11 +5,15 @@ import {AppComponent} from './app.component';
 import {ApartmentComponent} from "./apartment/apartment.component";
 import {HttpClientModule} from "@angular/common/http";
 import {ApartmentService} from "./apartment/apartment.service";
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ApartmentComponent
+    ApartmentComponent,
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
