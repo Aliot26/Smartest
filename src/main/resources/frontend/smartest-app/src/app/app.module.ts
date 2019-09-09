@@ -7,8 +7,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {NavbarComponent} from './navbar/navbar.component';
 import {FooterComponent} from './footer/footer.component';
 import {RouterModule} from "@angular/router";
-import {ApartmentDataService} from "./service/apartment-data.service";
-import { AppRoutingModule } from './app-routing.module';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +23,8 @@ import { AppRoutingModule } from './app-routing.module';
     AppRoutingModule
   ],
   providers: [
-    {provide: ApartmentDataService}],
+    // {provide: ApartmentDataService}
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
