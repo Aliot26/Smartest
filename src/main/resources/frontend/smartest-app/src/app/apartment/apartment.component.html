@@ -1,26 +1,27 @@
 <div class="panel panel-primary">
-  <div class="panel-heading">
-    <h2>Apartment List</h2>
-  </div>
-  <div class="panel-body">
-    <table class="table table-striped">
-      <thead>
-      <tr>
-        <th>Id</th>
-        <th>Number</th>
-        <th>Update</th>
-        <th>Delete</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let apartment of apartments">
-        <td>{{apartment.apId}}</td>
-        <td>{{apartment.apNumber}}</td>
-        <td><button class="btn btn-success">Update</button></td>
-        <td><button class="btn btn-warning">Delete</button></td>
-      </tr>
-      </tbody>
-    </table>
-    <button class="btn btn-success">Add</button>
+  <div class="container">
+    <div class="panel-heading">
+      <h2>Apartment List</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Id</th>
+          <th>Number</th>
+          <th>Update</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let apartment of apartments">
+          <td>{{apartment.apId}}</td>
+          <td>{{apartment.apNumber}}</td>
+          <td>
+            <button class="btn btn-success">Update</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

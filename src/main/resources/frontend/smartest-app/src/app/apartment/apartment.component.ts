@@ -1,6 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {Apartment} from "./apartment";
-import {ApartmentService} from "./apartment.service";
+import {ApartmentDataService} from "../service/apartment-data.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-apartment',
@@ -10,11 +11,12 @@ import {ApartmentService} from "./apartment.service";
 export class ApartmentComponent implements OnInit {
   apartments: Apartment[];
 
-  constructor(private apartmentService: ApartmentService) {
+  constructor(private apartmentDataService: ApartmentDataService,
+              private router: Router) {
   }
 
   ngOnInit() {
-    this.apartmentService.getApartmentsList().subscribe(data => {
+    this.apartmentDataService.retrieveAllApartments().subscribe(data => {
       this.apartments = data;
     });
   }

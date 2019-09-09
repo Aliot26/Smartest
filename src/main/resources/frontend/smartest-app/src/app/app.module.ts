@@ -4,9 +4,11 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {ApartmentComponent} from "./apartment/apartment.component";
 import {HttpClientModule} from "@angular/common/http";
-import {ApartmentService} from "./apartment/apartment.service";
-import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component';
+import {NavbarComponent} from './navbar/navbar.component';
+import {FooterComponent} from './footer/footer.component';
+import {RouterModule} from "@angular/router";
+import {ApartmentDataService} from "./service/apartment-data.service";
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -17,9 +19,12 @@ import { FooterComponent } from './footer/footer.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    RouterModule.forRoot([]),
+    HttpClientModule,
+    AppRoutingModule
   ],
-  providers: [ApartmentService],
+  providers: [
+    {provide: ApartmentDataService}],
   bootstrap: [AppComponent]
 })
 export class AppModule {
