@@ -1,7 +1,8 @@
 <H1>Apartment {{apartment.number}} Details</H1>
 
 <div class="container">
-  <div class="alert alert-warning" *ngIf="apartmentForm.submitted && apartmentForm.invalid">Please Enter Valid Data</div>
+  <div class="alert alert-warning" *ngIf="apartmentForm.submitted && apartmentForm.invalid">Please Enter Valid Data
+  </div>
   <form (ngSubmit)="!apartmentForm.invalid && saveApartment()" #apartmentForm="ngForm">
     <fieldset class="form-group">
       <label>Apartment ID</label>
@@ -16,7 +17,7 @@
       <label>
         <input type="number" #apartmentNumber="ngModel"
                [(ngModel)]="apartment.number" class="form-control" name="apNumber"
-               required="required" minlength="1" min="1">
+               required="required" minlength="1">
       </label>
     </fieldset>
 

@@ -14,7 +14,7 @@ export class ApartmentDataService {
   }
 
 
-  public retrieveAllApartments() : Observable<Apartment[]>{
+  public retrieveAllApartments(): Observable<Apartment[]> {
     return this.http.get<Apartment[]>('http://localhost:8080/apartments');
   }
 

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="userRole", schema = "public")
+@Table(name = "userRole", schema = "public")
 public class UserRole {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,6 +14,6 @@ public class UserRole {
     @Column
     private String role;
 
-    @OneToMany(targetEntity=User.class, mappedBy="userRole",cascade= CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(targetEntity = User.class, mappedBy = "userRole", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<User> users = new ArrayList<>();
 }
