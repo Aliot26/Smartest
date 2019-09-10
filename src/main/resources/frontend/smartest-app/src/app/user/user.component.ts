@@ -36,4 +36,8 @@ export class UserComponent implements OnInit {
     )
   }
 
+  updateUser(userId){
+    console.log("Update " + userId);
+  }
+
 }

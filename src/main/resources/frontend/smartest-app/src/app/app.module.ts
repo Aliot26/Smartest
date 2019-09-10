@@ -11,6 +11,7 @@ import {AppRoutingModule} from './app-routing.module';
 import { ApartmentDetailsComponent } from './apartment-details/apartment-details.component';
 import {FormsModule} from "@angular/forms";
 import { UserComponent } from './user/user.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { UserComponent } from './user/user.component';
     NavbarComponent,
     FooterComponent,
     ApartmentDetailsComponent,
-    UserComponent
+    UserComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
