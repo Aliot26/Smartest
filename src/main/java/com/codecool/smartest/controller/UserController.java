@@ -3,9 +3,8 @@ package com.codecool.smartest.controller;
 import com.codecool.smartest.model.User;
 import com.codecool.smartest.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,5 +23,13 @@ public class UserController {
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
+
+    @DeleteMapping("/user/{userId}")
+    public ResponseEntity<Void> deleteUser(
+            @PathVariable int userId) {
+        userRepository.deleteById(userId);
+    return ResponseEntity.noContent().build();
+    }
+
 
 }

@@ -10,14 +10,28 @@ import {UserDataService} from "../service/user-data.service";
 export class UserComponent implements OnInit {
 
   users: User[];
+  message: string;
 
   constructor(private userDataService: UserDataService) { }
 
   ngOnInit() {
+   this.refreshUsersList();
+  }
+
+  refreshUsersList(){
     this.userDataService.retrieveAllUsers().subscribe(
       response =>{
         console.log(response);
         this.users = response;
+      }
+    )
+  }
+
+  deleteUser(userId){
+    this.userDataService.deleteUser(userId).subscribe(
+      response =>{
+        this.message = `Delete User ${userId} Successful!`;
+        this.refreshUsersList();
       }
     )
   }

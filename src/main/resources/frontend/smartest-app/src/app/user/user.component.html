@@ -3,6 +3,7 @@
     <div class="panel-heading">
       <h2>User List</h2>
     </div>
+    <div class="alert alert-success" *ngIf="message">{{message}}</div>
     <div class="panel-body">
       <table class="table table-striped">
         <thead>
@@ -22,9 +23,9 @@
 <!--          <td>-->
 <!--            <button class="btn btn-success" (click)="updateUser(user.userId)">Update</button>-->
 <!--          </td>-->
-<!--          <td>-->
-<!--            <button class="btn btn-warning" (click)="deleteUser(user.userId)">Update</button>-->
-<!--          </td>-->
+          <td>
+            <button class="btn btn-warning" (click)="deleteUser(user.userId)">Delete</button>
+          </td>
         </tr>
         </tbody>
       </table>

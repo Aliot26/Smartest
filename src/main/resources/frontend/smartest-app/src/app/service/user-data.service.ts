@@ -14,4 +14,8 @@ export class UserDataService {
     return this.http.get<User[]>(`http://localhost:8080/users`);
   }
 
+  public deleteUser(userId){
+    return this.http.delete(`http://localhost:8080/user/${userId}`)
+  }
+
 }
