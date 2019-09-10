@@ -3,6 +3,7 @@ package com.codecool.smartest.model;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name = "apartments", schema = "public")
@@ -29,5 +30,27 @@ public class Apartment {
 
     public int getApNumber() {
         return apNumber;
+    }
+
+    public void setApId(int apId) {
+        this.apId = apId;
+    }
+
+    public void setApNumber(int apNumber) {
+        this.apNumber = apNumber;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Apartment)) return false;
+        Apartment apartment = (Apartment) o;
+        return apId == apartment.apId &&
+                apNumber == apartment.apNumber;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(apId, apNumber);
     }
 }
