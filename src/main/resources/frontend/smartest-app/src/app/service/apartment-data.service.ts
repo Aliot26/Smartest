@@ -21,4 +21,8 @@ export class ApartmentDataService {
   public retrieveApartment(apId) {
     return this.http.get<Apartment>(`http://localhost:8080/apartment/${apId}`);
   }
+
+  public updateApartment(apId, apartment) {
+    return this.http.put(`http://localhost:8080/apartment/${apId}`, apartment);
+  }
 }

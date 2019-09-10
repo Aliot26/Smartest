@@ -1,8 +1,6 @@
 package com.codecool.smartest.model;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -14,7 +12,7 @@ public class Apartment {
     private int apId;
 
     @Column(name = "number")
-    private int apNumber;
+    private int number;
 
 //    @ManyToMany(targetEntity = User.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 //    @JoinTable(
@@ -28,16 +26,16 @@ public class Apartment {
         return apId;
     }
 
-    public int getApNumber() {
-        return apNumber;
+    public int getNumber() {
+        return number;
     }
 
     public void setApId(int apId) {
         this.apId = apId;
     }
 
-    public void setApNumber(int apNumber) {
-        this.apNumber = apNumber;
+    public void setNumber(int number) {
+        this.number = number;
     }
 
     @Override
@@ -46,11 +44,11 @@ public class Apartment {
         if (!(o instanceof Apartment)) return false;
         Apartment apartment = (Apartment) o;
         return apId == apartment.apId &&
-                apNumber == apartment.apNumber;
+                number == apartment.number;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(apId, apNumber);
+        return Objects.hash(apId, number);
     }
 }
