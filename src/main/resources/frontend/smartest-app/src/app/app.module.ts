@@ -10,6 +10,7 @@ import {RouterModule} from "@angular/router";
 import {AppRoutingModule} from './app-routing.module';
 import { ApartmentDetailsComponent } from './apartment-details/apartment-details.component';
 import {FormsModule} from "@angular/forms";
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {FormsModule} from "@angular/forms";
     ApartmentComponent,
     NavbarComponent,
     FooterComponent,
-    ApartmentDetailsComponent
+    ApartmentDetailsComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
