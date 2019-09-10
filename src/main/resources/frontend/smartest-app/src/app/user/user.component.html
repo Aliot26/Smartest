@@ -1,0 +1,35 @@
+<div class="panel panel-primary">
+  <div class="container">
+    <div class="panel-heading">
+      <h2>User List</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Id</th>
+          <th>Username</th>
+          <th>Role</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let user of users" >
+          <td>{{user.userId}}</td>
+          <td>{{user.username}}</td>
+          <td>{{user.userRole}}</td>
+<!--          <td>-->
+<!--            <button class="btn btn-success" (click)="updateUser(user.userId)">Update</button>-->
+<!--          </td>-->
+<!--          <td>-->
+<!--            <button class="btn btn-warning" (click)="deleteUser(user.userId)">Update</button>-->
+<!--          </td>-->
+        </tr>
+        </tbody>
+      </table>
+<!--      <button class="btn btn-success" (click)="addUser()">Update</button>-->
+    </div>
+  </div>
+</div>
+
