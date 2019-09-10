@@ -31,27 +31,20 @@ public class ApartmentController {
         return apartmentRepository.findAll();
     }
 
-    @GetMapping("/apartments/{apId}")
+    @GetMapping("/apartment/{apId}")
     public Optional<Apartment> getApartment(
 //            @PathVariable int userId,
             @PathVariable int apId) {
         return apartmentRepository.findById(apId);
     }
 
-    @PutMapping("/apartments/{apId}")
+    @PutMapping("/apartment/{apId}")
     public ResponseEntity<Apartment> updateApartment(
             @PathVariable int apId,
             @RequestBody Apartment apartment) {
         Apartment apartmentUpdated = apartmentRepository.save(apartment);
-        return new ResponseEntity<Apartment>(apartment, HttpStatus.OK);
+        return new ResponseEntity<>(apartment, HttpStatus.OK);
     }
-
-//    @DeleteMapping("/apartments/{apId}")
-//    public ResponseEntity<Void> deleteApartment(
-//            @PathVariable int apId) {
-//        apartmentRepository.deleteById(apId);
-//        return ResponseEntity.noContent().build();
-//    }
 
 
 }

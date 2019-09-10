@@ -8,19 +8,23 @@ import {NavbarComponent} from './navbar/navbar.component';
 import {FooterComponent} from './footer/footer.component';
 import {RouterModule} from "@angular/router";
 import {AppRoutingModule} from './app-routing.module';
+import { ApartmentDetailsComponent } from './apartment-details/apartment-details.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
     ApartmentComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    ApartmentDetailsComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([]),
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     // {provide: ApartmentDataService}

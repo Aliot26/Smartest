@@ -21,4 +21,8 @@ export class ApartmentComponent implements OnInit {
       this.apartments = response;
     });
   }
+
+  updateApartment(apId: number) {
+    this.router.navigate(["apartment", apId]);
+  }
 }
