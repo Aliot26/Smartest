@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from "./user";
 import {UserDataService} from "../service/user-data.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-user',
@@ -12,7 +13,8 @@ export class UserComponent implements OnInit {
   users: User[];
   message: string;
 
-  constructor(private userDataService: UserDataService) { }
+  constructor(private userDataService: UserDataService,
+              private router: Router) { }
 
   ngOnInit() {
    this.refreshUsersList();
@@ -38,6 +40,9 @@ export class UserComponent implements OnInit {
 
   updateUser(userId){
     console.log("Update " + userId);
+    this.router.navigate(['user', userId]);
   }
+
+
 
 }

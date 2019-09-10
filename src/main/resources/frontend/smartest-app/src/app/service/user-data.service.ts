@@ -18,4 +18,11 @@ export class UserDataService {
     return this.http.delete(`http://localhost:8080/user/${userId}`)
   }
 
+  public retrieveUser(userId){
+    return this.http.get<User>(`http://localhost:8080/user/${userId}`)
+  }
+
+  public updateUser(userId, user){
+    return this.http.put(`http://localhost:8080/user/${userId}`, user)
+  }
 }

@@ -1,1 +1,27 @@
-<p>user-details works!</p>
+<h1>User Details</h1>
+
+<div class="container">
+  <form (ngSubmit)="!userForm.invalid && save()" #userForm="ngForm">
+    <fieldset class="form-group">
+      <label>User ID</label>
+      <label>
+        <input type="text"
+               [(ngModel)]="user.userId"
+               class="form-control" name="userId" disabled>
+      </label>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label>Username</label>
+      <label>
+        <input type="text"
+               [(ngModel)]="user.username"
+               class="form-control" name="username" required="required">
+      </label>
+    </fieldset>
+
+
+    <button type="submit" class="btn btn-success">Save</button>
+  </form>
+</div>
+
