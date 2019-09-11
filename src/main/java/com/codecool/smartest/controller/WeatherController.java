@@ -24,7 +24,7 @@ public class WeatherController {
             @PathVariable String lat,
             @PathVariable String lng
     ) {
-        String uriNew = url + lat + "," + lng;
+        String uriNew = url + lat + ',' + lng;
         System.out.println(uriNew);
         return restTemplate.getForEntity(uriNew, String.class, lat, lng);
     }
