@@ -1,6 +1,8 @@
-<h1>User Details</h1>
+<h1>User {{user.username}} Details</h1>
 
 <div class="container">
+  <div class="alert alert-warning" *ngIf="userForm.submitted && userForm.invalid">Please Enter Valid Data
+  </div>
   <form (ngSubmit)="!userForm.invalid && save()" #userForm="ngForm">
     <fieldset class="form-group">
       <label>User ID</label>
@@ -16,7 +18,7 @@
       <label>
         <input type="text"
                [(ngModel)]="user.username"
-               class="form-control" name="username" required="required">
+               class="form-control" name="username" required="required" minlength="2">
       </label>
     </fieldset>
 
