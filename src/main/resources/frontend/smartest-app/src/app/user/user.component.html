@@ -16,7 +16,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let user of users" >
+        <tr *ngFor="let user of users">
           <td>{{user.userId}}</td>
           <td>{{user.username}}</td>
           <td>{{user.userRole}}</td>
@@ -29,7 +29,9 @@
         </tr>
         </tbody>
       </table>
-<!--      <button class="btn btn-success" (click)="addUser()">Update</button>-->
+      <div class="row">
+        <button class="btn btn-success" (click)="addUser()">Add</button>
+      </div>
     </div>
   </div>
 </div>

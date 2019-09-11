@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UserDataService} from "../service/user-data.service";
 import {User} from "../user/user";
 import {ActivatedRoute, Router} from "@angular/router";
@@ -17,23 +17,37 @@ export class UserDetailsComponent implements OnInit {
     private userDataService: UserDataService,
     private route: ActivatedRoute,
     private router: Router
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];
-    this.userDataService.retrieveUser(this.id)
-      .subscribe(
-        response =>this.user=response
-      )
+    this.user = new User(this.id, '', 1, null)
+
+    if (this.id != -1) {
+      this.userDataService.retrieveUser(this.id)
+        .subscribe(
+          response => this.user = response
+        )
+    }
   }
 
-  save(){
-    this.userDataService.updateUser(this.id, this.user)
-      .subscribe(
-        data=>{
-          this.router.navigate(['users'])
-        }
-      )
+  save() {
+    if (this.id === -1) {
+      this.userDataService.createUser(this.user)
+        .subscribe(
+          data => {
+            this.router.navigate(['users'])
+          }
+        )
+    } else {
+      this.userDataService.updateUser(this.id, this.user)
+        .subscribe(
+          data => {
+            this.router.navigate(['users'])
+          }
+        )
+    }
   }
 
 }

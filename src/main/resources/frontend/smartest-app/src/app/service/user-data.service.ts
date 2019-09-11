@@ -25,4 +25,8 @@ export class UserDataService {
   public updateUser(userId, user){
     return this.http.put(`http://localhost:8080/user/${userId}`, user)
   }
+
+  public createUser(user){
+    return this.http.post(`http://localhost:8080/users`, user)
+  }
 }

@@ -43,6 +43,10 @@ export class UserComponent implements OnInit {
     this.router.navigate(['user', userId]);
   }
 
+  addUser(){
+    this.router.navigate(['user', -1]);
+  }
+
 
 
 }
