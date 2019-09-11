@@ -12,6 +12,8 @@ import {ApartmentDetailsComponent} from './apartment-details/apartment-details.c
 import {FormsModule} from "@angular/forms";
 import { UserComponent } from './user/user.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { LocalForecastComponent } from './local-forecast/local-forecast.component';
+import {WeatherService} from "./service/weather.service";
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     FooterComponent,
     ApartmentDetailsComponent,
     UserComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    LocalForecastComponent
   ],
   imports: [
     BrowserModule,
@@ -30,9 +33,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [
-    // {provide: ApartmentDataService}
-  ],
+  providers: [WeatherService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
