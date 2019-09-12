@@ -19,12 +19,14 @@
               <i [class]="weatherIcon(f.currently.icon)" style="font-size:250%"></i>
             </div>
           </div>
-
+          <div><br></div>
           <div id="today-details">
             <span><i class="wi wi-raindrops"></i>  {{f.currently.humidity * 100 | number: '1.0-1'}}%</span>
             <span><i class="wi wi-strong-wind"></i>  {{f.currently.windSpeed | number: '1.0-1' }} km/h</span>
             <span><i class="wi wi-barometer"></i>  {{f.currently.pressure | number: '1.0-0' }} hPa</span>
           </div>
+
+          <div><br></div>
         </div>
       </div>
       <div *ngFor="let day of f.daily.data" class="forecast">
@@ -41,6 +43,7 @@
             <i class="wi wi-sandstorm" style="font-size:150%; margin-top: 35%"></i>
           </div>
           <div class="num" style="font-size:100%">{{day.windSpeed | number:'1.0-0'}} km/h</div>
+
         </div>
       </div>
     </div>
