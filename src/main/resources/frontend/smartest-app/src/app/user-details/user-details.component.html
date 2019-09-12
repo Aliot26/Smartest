@@ -5,7 +5,7 @@
   </div>
   <form (ngSubmit)="!userForm.invalid && save()" #userForm="ngForm">
     <fieldset class="form-group">
-      <label>User ID</label>
+      <label>User ID: </label>
       <label>
         <input type="text"
                [(ngModel)]="user.userId"
@@ -14,7 +14,7 @@
     </fieldset>
 
     <fieldset class="form-group">
-      <label>Username</label>
+      <label>Username: </label>
       <label>
         <input type="text"
                [(ngModel)]="user.username"
@@ -23,7 +23,7 @@
     </fieldset>
 
     <fieldset class="form-group">
-      <label>Firstname</label>
+      <label>First Name: </label>
       <label>
         <input type="text"
                [(ngModel)]="user.firstName"
@@ -31,7 +31,7 @@
       </label>
     </fieldset>
     <fieldset class="form-group">
-      <label>Lastname</label>
+      <label>Last Name: </label>
       <label>
         <input type="text"
                [(ngModel)]="user.lastName"

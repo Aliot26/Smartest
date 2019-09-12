@@ -1,1 +1,14 @@
-@import "style.css";
+@import "themezy-weather.css";
+
+#today-details {
+  font-size: 120%;
+}
+
+#weather-header, #forecast-title {
+  text-align: center;
+}
+
+
+/*.forecast-icon {*/
+/*  color: #000000;*/
+/*}*/
