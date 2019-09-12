@@ -13,6 +13,12 @@ public class User {
     private String username;
 
     @Column
+    private String firstName;
+
+    @Column
+    private String lastName;
+
+    @Column
     private String password;
 
     @ManyToOne()
@@ -33,5 +39,13 @@ public class User {
 
     public UserRole getUserRole() {
         return userRole;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 }

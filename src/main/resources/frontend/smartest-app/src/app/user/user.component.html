@@ -10,6 +10,8 @@
         <tr>
           <th>Id</th>
           <th>Username</th>
+          <th>Firstname</th>
+          <th>Lastname</th>
           <th>Role</th>
           <th>Update</th>
           <th>Delete</th>
@@ -19,6 +21,8 @@
         <tr *ngFor="let user of users">
           <td>{{user.userId}}</td>
           <td>{{user.username}}</td>
+          <td>{{user.firstName}}</td>
+          <td>{{user.lastName}}</td>
           <td>{{user.userRole}}</td>
           <td>
             <button class="btn btn-success" (click)="updateUser(user.userId)">Update</button>

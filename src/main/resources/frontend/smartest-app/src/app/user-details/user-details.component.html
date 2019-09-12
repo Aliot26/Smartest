@@ -22,6 +22,23 @@
       </label>
     </fieldset>
 
+    <fieldset class="form-group">
+      <label>Firstname</label>
+      <label>
+        <input type="text"
+               [(ngModel)]="user.firstName"
+               class="form-control" name="firstName" required="required" minlength="2">
+      </label>
+    </fieldset>
+    <fieldset class="form-group">
+      <label>Lastname</label>
+      <label>
+        <input type="text"
+               [(ngModel)]="user.lastName"
+               class="form-control" name="lastName" required="required" minlength="2">
+      </label>
+    </fieldset>
+
 
     <button type="submit" class="btn btn-success">Save</button>
   </form>

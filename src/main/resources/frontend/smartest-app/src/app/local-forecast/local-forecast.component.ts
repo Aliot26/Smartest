@@ -22,12 +22,15 @@ export class LocalForecastComponent implements OnInit {
       navigator.geolocation.getCurrentPosition(position => {
         this.lat = position.coords.latitude;
         this.lng = position.coords.longitude;
+        this.getForecast();
       });
     } else {
       /// default coords
       this.lat = 40.73;
       this.lng = -73.93;
+      this.getForecast();
     }
+
   }
 
   getForecast() {
@@ -46,8 +49,12 @@ export class LocalForecastComponent implements OnInit {
         return 'wi wi-day-sunny';
       case 'partly-cloudy-night':
         return 'wi wi-night-partly-cloudy';
+      case 'rain':
+        return 'wi wi-day-rain';
+      case 'snow':
+        return 'wi wi-day-snow';
       default:
-        return `wi wi-day-sunny`
+        return `wi wi-solar-eclipse`
     }
   }
 

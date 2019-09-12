@@ -3,19 +3,43 @@
     <i class="wi wi-barometer"></i> Your Local Weather Forecast
   </h1>
 
-  <p>Current Position: {{ lat }} / {{ lng }} </p>
+  <h2>Seven Day Forecast</h2>
 
-  <button (click)="getForecast()">Get Forecast</button>
-
-  <h1>Seven Day Forecast</h1>
-
-  <div *ngIf="forecast | async as f" class="columns">
-    <div *ngFor="let day of f.daily.data" class="column">
-
-      <i [class]="weatherIcon(day.icon)"></i>
-      <h3>{{ day.time * 1000 | date: 'MMM d'  }}</h3>
-      <p>{{ day.summary }}</p>
-
+  <div class="container">
+    <div *ngIf="forecast | async as f" class="forecast-container">
+      <div class="today forecast">
+        <div class="forecast-header">
+          <div class="date">{{f.currently.time * 1000 | date: 'MMM d'}}</div>
+        </div> <!-- .forecast-header -->
+        <div class="forecast-content">
+          <div class="location">{{f.timezone}}</div>
+          <div class="degree">
+            <div class="num">{{f.currently.temperature | number:'1.0-0'}}<sup>o</sup>C</div>
+            <div class="forecast-icon">
+              <i [class]="weatherIcon(f.currently.icon)" style="font-size:250%"></i>
+            </div>
+          </div>
+          <span><img src="images/icon-umberella.png" alt="">{{f.currently.humidity * 100 | number: '1.0-1'}}%</span>
+          <span><img src="images/icon-wind.png" alt="">{{f.currently.windSpeed | number: '1.0-1' }} km/h</span>
+          <span><img src="images/icon-wind.png" alt="">{{f.currently.pressure | number: '1.0-0' }} hPa</span>
+        </div>
+      </div>
+      <div *ngFor="let day of f.daily.data | slice:1" class="forecast">
+        <div class="forecast-header">
+          <div class="day">{{ day.time * 1000 | date: 'MMM d' }}</div>
+        </div> <!-- .forecast-header -->
+        <div class="forecast-content">
+          <div class="forecast-icon">
+            <i [class]="weatherIcon(day.icon)" style="font-size:250%"></i>
+          </div>
+          <div class="degree">{{day.temperatureMax | number:'1.0-0'}}<sup>o</sup>C</div>
+          <small>{{day.temperatureMin | number:'1.0-0'}}<sup>o</sup>C</small>
+          <div class="forecast-icon">
+            <i class="wi wi-sandstorm" style="font-size:150%; margin-top: 35%"></i>
+          </div>
+          <div class="degree" style="font-size:100%" >{{day.windSpeed | number:'1.0-0'}} km/h</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

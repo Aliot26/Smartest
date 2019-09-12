@@ -22,7 +22,7 @@ export class UserDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];
-    this.user = new User(this.id, '', 1, null)
+    this.user = new User(this.id, '', '', '', 1, null)
 
     if (this.id != -1) {
       this.userDataService.retrieveUser(this.id)
