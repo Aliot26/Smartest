@@ -9,7 +9,7 @@
     <div *ngIf="forecast | async as f" class="forecast-container">
       <div class="today forecast">
         <div class="forecast-header">
-          <div class="day">{{f.currently.time * 1000 | date: 'MMM d'}}</div>
+          <div class="day">Now</div>
         </div> <!-- .forecast-header -->
         <div class="forecast-content">
           <div class="location">{{f.timezone}}</div>
@@ -27,7 +27,7 @@
           </div>
         </div>
       </div>
-      <div *ngFor="let day of f.daily.data | slice:1" class="forecast">
+      <div *ngFor="let day of f.daily.data" class="forecast">
         <div class="forecast-header">
           <div class="day">{{ day.time * 1000 | date: 'MMM d' }}</div>
         </div> <!-- .forecast-header -->
