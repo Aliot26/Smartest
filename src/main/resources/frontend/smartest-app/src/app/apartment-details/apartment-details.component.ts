@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ApartmentDataService} from "../service/apartment-data.service";
 import {Apartment} from "../apartment/apartment";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-apartment-details',
@@ -15,15 +15,27 @@ export class ApartmentDetailsComponent implements OnInit {
 
   constructor(
     private apartmentDataService: ApartmentDataService,
-    private route: ActivatedRoute
-  ) { }
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
+  }
 
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];
-    this.apartmentDataService.retrieveApartment(this.id).subscribe(
-      data => this.apartment = data
-    )
+    this.apartment = new Apartment();
+    this.apartmentDataService.retrieveApartment(this.id)
+      .subscribe(
+        data => this.apartment = data
+      )
   }
 
 
+  saveApartment() {
+    this.apartmentDataService.updateApartment(this.id, this.apartment)
+      .subscribe(
+        data => {
+          this.router.navigate(['apartments']);
+        }
+      )
+  }
 }

@@ -16,7 +16,7 @@ export class ApartmentComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.apartmentDataService.retrieveAllApartments().subscribe(response =>{
+    this.apartmentDataService.retrieveAllApartments().subscribe(response => {
       console.log(response);
       this.apartments = response;
     });

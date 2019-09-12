@@ -1,7 +1,7 @@
 <div class="panel panel-primary">
   <div class="container">
     <div class="panel-heading">
-      <h2>Apartment List</h2>
+      <h2 id="listHeader">Apartments List</h2>
     </div>
     <div class="panel-body">
       <table class="table table-striped">
@@ -13,9 +13,9 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let apartment of apartments" >
+        <tr *ngFor="let apartment of apartments">
           <td>{{apartment.apId}}</td>
-          <td>{{apartment.apNumber}}</td>
+          <td>{{apartment.number}}</td>
           <td>
             <button class="btn btn-success" (click)="updateApartment(apartment.apId)">Update</button>
           </td>

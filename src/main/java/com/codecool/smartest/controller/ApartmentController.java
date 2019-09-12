@@ -2,6 +2,7 @@ package com.codecool.smartest.controller;
 
 import com.codecool.smartest.model.Apartment;
 import com.codecool.smartest.repository.ApartmentRepository;
+import org.omg.DynamicAny.DynAnyPackage.InvalidValue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -41,7 +42,10 @@ public class ApartmentController {
     @PutMapping("/apartment/{apId}")
     public ResponseEntity<Apartment> updateApartment(
             @PathVariable int apId,
-            @RequestBody Apartment apartment) {
+            @RequestBody Apartment apartment) throws InvalidValue {
+        if (apartment.getNumber() <= 0) {
+            throw new InvalidValue();
+        }
         Apartment apartmentUpdated = apartmentRepository.save(apartment);
         return new ResponseEntity<>(apartment, HttpStatus.OK);
     }
