@@ -24,8 +24,6 @@ class ApartmentControllerTest {
         ApartmentRepository apartmentRepository = mock(ApartmentRepository.class);
         when(apartmentRepository.findById(1)).thenReturn(java.util.Optional.of(apartment));
 
-
-
     }
 
     @Test
