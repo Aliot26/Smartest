@@ -4,6 +4,8 @@ import {WeatherService} from "../service/weather.service";
 import {tap} from "rxjs/operators";
 
 
+
+
 @Component({
   selector: 'local-forecast',
   templateUrl: './local-forecast.component.html',
@@ -18,6 +20,10 @@ export class LocalForecastComponent implements OnInit {
   constructor(private weather: WeatherService) { }
 
   ngOnInit() {
+    this.getLocation.call(this);
+
+  }
+  getLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
         this.lat = position.coords.latitude;
@@ -30,8 +36,8 @@ export class LocalForecastComponent implements OnInit {
       this.lng = -73.93;
       this.getForecast();
     }
-
   }
+
 
   getForecast() {
     this.forecast = this.weather.currentForecast(this.lat, this.lng)
