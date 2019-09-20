@@ -49,7 +49,5 @@ public class ApartmentController {
         Apartment apartmentUpdated = apartmentRepository.save(apartment);
         return new ResponseEntity<>(apartment, HttpStatus.OK);
     }
-
-
 }
 
