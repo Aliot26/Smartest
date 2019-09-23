@@ -1,3 +1,5 @@
+import {UserRole} from "./userRole";
+
 export class User {
 
   userId: number;
@@ -5,7 +7,7 @@ export class User {
   firstName: string;
   lastName: string;
   password: number;
-  userRole: number;
+  userRole: UserRole;
 
   constructor(
     userId: number,
@@ -13,7 +15,7 @@ export class User {
     firstName: string,
     lastName: string,
     password: number,
-    userRole: number
+    userRole: UserRole
   ) {
   }
 }
