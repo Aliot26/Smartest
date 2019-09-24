@@ -7,28 +7,14 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <!--      <li class="nav-item active">-->
-      <!--        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>-->
-      <!--      </li>-->
       <li class="nav-item">
         <a class="nav-link" routerLink="/apartments">Apartments</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/users">Users</a>
       </li>
-
     </ul>
 
   </div>
-  <form class="form-inline">
-    <label class="sr-only">Username</label>
-    <input type="text" class="form-control mb-2 mr-sm-2" id="username" name="username" placeholder="username">
-
-    <label class="sr-only">Password</label>
-    <div class="input-group mb-2 mr-sm-2">
-      <input type="text" class="form-control" id="password" name="password" placeholder="password">
-    </div>
-
-    <button type="submit" class="btn btn-primary mb-2">Sign in</button>
-  </form>
+  <app-login></app-login>
 </nav>
