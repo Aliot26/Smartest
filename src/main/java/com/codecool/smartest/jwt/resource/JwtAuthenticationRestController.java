@@ -34,7 +34,7 @@ public class JwtAuthenticationRestController {
     private UserDetailsService jwtInMemoryUserDetailsService;
 
     @RequestMapping(value = "${jwt.get.token.uri}", method = RequestMethod.POST)
-    public ResponseEntity<?> createAuthenticationToken(@RequestBody com.codecool.smartest.jwt.resource.JwtTokenRequest authenticationRequest)
+    public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtTokenRequest authenticationRequest)
             throws AuthenticationException {
 
         authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
