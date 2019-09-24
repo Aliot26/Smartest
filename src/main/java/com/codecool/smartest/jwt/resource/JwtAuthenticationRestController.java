@@ -3,6 +3,7 @@ package com.codecool.smartest.jwt.resource;
 import com.codecool.smartest.jwt.JwtTokenUtil;
 import com.codecool.smartest.jwt.JwtUserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,15 +34,19 @@ public class JwtAuthenticationRestController {
     @Autowired
     private UserDetailsService jwtInMemoryUserDetailsService;
 
+    @Autowired
+    private UserDetailsService jwtDatabaseUserDetailsService;
+
     @RequestMapping(value = "${jwt.get.token.uri}", method = RequestMethod.POST)
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtTokenRequest authenticationRequest)
             throws AuthenticationException {
 
         authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
 
-        final UserDetails userDetails = jwtInMemoryUserDetailsService.loadUserByUsername(authenticationRequest.getUsername());
+//        final UserDetails userDetails = jwtInMemoryUserDetailsService.loadUserByUsername(authenticationRequest.getUsername());
+        final UserDetails userDetailsDb = jwtDatabaseUserDetailsService.loadUserByUsername(authenticationRequest.getUsername());
 
-        final String token = jwtTokenUtil.generateToken(userDetails);
+        final String token = jwtTokenUtil.generateToken(userDetailsDb);
 
         return ResponseEntity.ok(new JwtTokenResponse(token));
     }
