@@ -10,10 +10,11 @@ import {RouterModule} from "@angular/router";
 import {AppRoutingModule} from './app-routing.module';
 import {ApartmentDetailsComponent} from './apartment-details/apartment-details.component';
 import {FormsModule} from "@angular/forms";
-import { UserComponent } from './user/user.component';
-import { UserDetailsComponent } from './user-details/user-details.component';
-import { LocalForecastComponent } from './local-forecast/local-forecast.component';
+import {UserComponent} from './user/user.component';
+import {UserDetailsComponent} from './user-details/user-details.component';
+import {LocalForecastComponent} from './local-forecast/local-forecast.component';
 import {WeatherService} from "./service/weather.service";
+import {LoginComponent} from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {WeatherService} from "./service/weather.service";
     ApartmentDetailsComponent,
     UserComponent,
     UserDetailsComponent,
-    LocalForecastComponent
+    LocalForecastComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
