@@ -324,6 +324,7 @@ form textarea {
   color: white;
 }
 
+
 .map {
   height: 220px;
 }
@@ -1783,6 +1784,10 @@ form textarea {
 .forecast-container .forecast .forecast-content small {
   font-size: 16px;
   font-size: 1.1428571429em;
+}
+
+.forecast-container .forecast :hover {
+  background-color: #15ff6f;
 }
 
 .fullwidth-block {

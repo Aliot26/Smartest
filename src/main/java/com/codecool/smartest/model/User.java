@@ -2,7 +2,7 @@ package com.codecool.smartest.model;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "users")
 @Table(name = "users", schema = "public")
 public class User {
     @Id
