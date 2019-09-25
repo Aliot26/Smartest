@@ -3,7 +3,6 @@ package com.codecool.smartest.jwt.resource;
 import com.codecool.smartest.jwt.JwtTokenUtil;
 import com.codecool.smartest.jwt.JwtUserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,9 +31,6 @@ public class JwtAuthenticationRestController {
     private JwtTokenUtil jwtTokenUtil;
 
     @Autowired
-    private UserDetailsService jwtInMemoryUserDetailsService;
-
-    @Autowired
     private UserDetailsService jwtDatabaseUserDetailsService;
 
     @RequestMapping(value = "${jwt.get.token.uri}", method = RequestMethod.POST)
@@ -43,10 +39,9 @@ public class JwtAuthenticationRestController {
 
         authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
 
-//        final UserDetails userDetails = jwtInMemoryUserDetailsService.loadUserByUsername(authenticationRequest.getUsername());
-        final UserDetails userDetailsDb = jwtDatabaseUserDetailsService.loadUserByUsername(authenticationRequest.getUsername());
+        final UserDetails userDetails = jwtDatabaseUserDetailsService.loadUserByUsername(authenticationRequest.getUsername());
 
-        final String token = jwtTokenUtil.generateToken(userDetailsDb);
+        final String token = jwtTokenUtil.generateToken(userDetails);
 
         return ResponseEntity.ok(new JwtTokenResponse(token));
     }
@@ -56,7 +51,7 @@ public class JwtAuthenticationRestController {
         String authToken = request.getHeader(tokenHeader);
         final String token = authToken.substring(7);
         String username = jwtTokenUtil.getUsernameFromToken(token);
-        JwtUserDetails user = (JwtUserDetails) jwtInMemoryUserDetailsService.loadUserByUsername(username);
+        JwtUserDetails user = (JwtUserDetails) jwtDatabaseUserDetailsService.loadUserByUsername(username);
 
         if (jwtTokenUtil.canTokenBeRefreshed(token)) {
             String refreshedToken = jwtTokenUtil.refreshToken(token);

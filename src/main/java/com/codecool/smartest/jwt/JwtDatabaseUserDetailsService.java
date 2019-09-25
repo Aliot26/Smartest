@@ -23,6 +23,6 @@ public class JwtDatabaseUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
         User user =  userRepository.findByUsername(username);
-        return (UserDetails) user;
+        return new UserPrincipal(user);
     }
 }
