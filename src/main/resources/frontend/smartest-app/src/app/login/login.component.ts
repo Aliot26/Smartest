@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
+import {BasicAuthenticationService} from "../service/basic-authentication.service";
 
 @Component({
   selector: 'app-login',
@@ -7,13 +9,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  username = "";
+  password = "";
+  errorMessage = 'Invalid Credentials';
+  invalidLogin = false;
+
+  constructor(
+    private router: Router,
+    private basicAuthenticationService: BasicAuthenticationService
+  ) { }
 
   ngOnInit() {
   }
 
+  handleJWTAuthLogin() {
+    this.basicAuthenticationService.executeJWTAuthenticationService(this.username, this.password)
+      .subscribe(
+        data => {
+          console.log(data);
+          this.router.navigate(['', this.username]);
+        },
+        // tslint:disable-next-line:no-shadowed-variable
+        error => {
+          console.log(error);
+          this.invalidLogin = true;
+        }
+      );
+  }
+
   Logout() {
-    // delete token
-    // send alert - "successful logout"
+    this.basicAuthenticationService.logout();
   }
 }
