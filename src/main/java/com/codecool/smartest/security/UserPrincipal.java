@@ -25,7 +25,6 @@ public class UserPrincipal implements UserDetails {
             return user.getPassword();
         } catch (NullPointerException err) {
             //TODO redirect:
-//            return "redirect:/login";
             return null;
         }
     }
@@ -36,7 +35,6 @@ public class UserPrincipal implements UserDetails {
             return user.getUsername();
         } catch (NullPointerException err) {
             //TODO redirect:
-//            return "redirect:/login";
             return null;
         }
     }

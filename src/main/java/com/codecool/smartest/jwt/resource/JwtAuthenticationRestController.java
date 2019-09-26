@@ -2,6 +2,8 @@ package com.codecool.smartest.jwt.resource;
 
 import com.codecool.smartest.jwt.JwtTokenUtil;
 import com.codecool.smartest.jwt.JwtUserDetails;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -20,6 +22,8 @@ import java.util.Objects;
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 public class JwtAuthenticationRestController {
+
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Value("${jwt.http.request.header}")
     private String tokenHeader;
@@ -73,6 +77,7 @@ public class JwtAuthenticationRestController {
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
         } catch (DisabledException e) {
+            logger.debug(e.getMessage());
             throw new AuthenticationException("USER_DISABLED", e);
         } catch (BadCredentialsException e) {
             throw new AuthenticationException("INVALID_CREDENTIALS", e);
