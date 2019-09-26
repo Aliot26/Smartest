@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
         data => {
           console.log(data);
           this.router.navigate(['']);
+          this.invalidLogin = false;
         },
         // tslint:disable-next-line:no-shadowed-variable
         error => {
