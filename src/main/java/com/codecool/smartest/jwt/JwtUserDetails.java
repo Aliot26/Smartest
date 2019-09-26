@@ -1,5 +1,6 @@
 package com.codecool.smartest.jwt;
 
+import com.codecool.smartest.model.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -18,10 +19,12 @@ public class JwtUserDetails implements UserDetails {
     private final String password;
     private final Collection<? extends GrantedAuthority> authorities;
 
-    public JwtUserDetails(Long id, String username, String password, String role) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
+    public JwtUserDetails(User user) {
+        id = user.getUserId();
+        username = user.getUsername();
+        password = user.getPassword();
+
+        String role = user.getUserRole().getRole();
 
         List<SimpleGrantedAuthority> authorities = new ArrayList<SimpleGrantedAuthority>();
         authorities.add(new SimpleGrantedAuthority(role));

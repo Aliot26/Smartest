@@ -24,8 +24,8 @@ VALUES (101),
 TRUNCATE table user_role cascade;
 ALTER SEQUENCE user_role_role_id_seq RESTART WITH 1;
 INSERT into user_role(role)
-VALUES ('User'),
-       ('Admin');
+VALUES ('USER'),
+       ('ADMIN');
 
 TRUNCATE table users cascade;
 ALTER SEQUENCE users_user_id_seq RESTART WITH 1;
