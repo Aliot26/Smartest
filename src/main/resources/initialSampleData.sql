@@ -50,4 +50,4 @@ values ('nmcure0', 'Nathaniel', 'McUre', 1),
        ('emichielih', 'Ezri', 'Michieli', 1),
        ('cweddeburni', 'Connie', 'Weddeburn', 1),
        ('cguinnanej', 'Cash', 'Guinnane', 1),
-       ('admin', 'admin', 'admin', 2);
+       ('admin', 'first_name_admin', 'last_name_admin', 2);
