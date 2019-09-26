@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Apartment} from "../apartment/apartment";
 import {Observable} from "rxjs";
+import {API_URL} from "../app.constants";
 
 @Injectable({
   providedIn: 'root'
@@ -15,14 +16,14 @@ export class ApartmentDataService {
 
 
   public retrieveAllApartments(): Observable<Apartment[]> {
-    return this.http.get<Apartment[]>('http://localhost:8080/apartments');
+    return this.http.get<Apartment[]>(`${API_URL}/apartments`);
   }
 
   public retrieveApartment(apId) {
-    return this.http.get<Apartment>(`http://localhost:8080/apartment/${apId}`);
+    return this.http.get<Apartment>(`${API_URL}/apartment/${apId}`);
   }
 
   public updateApartment(apId, apartment) {
-    return this.http.put(`http://localhost:8080/apartment/${apId}`, apartment);
+    return this.http.put(`${API_URL}/apartment/${apId}`, apartment);
   }
 }
