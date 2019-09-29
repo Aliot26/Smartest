@@ -11,10 +11,10 @@ the estate as a whole structure. Frontend created with use Angular
 and TypeScript.
 
 TO START:
-clone 'master' branch
-create postreSQL database
-run Smartest/src/main/resources/initialSampleData.sql
-run Smartest/src/main/java/com/codecool/smartest/SmartestApplication.java (start Spring back end)
-'ng serve' in Smartest/src/main/resources/frontend/smartest-app (start Angular front end)
-go to 'http://localhost:4200/'
-log in using test credentials (username: admin , password: admin) 
+1. clone 'master' branch
+2. create postreSQL database
+3. run Smartest/src/main/resources/initialSampleData.sql
+4. run Smartest/src/main/java/com/codecool/smartest/SmartestApplication.java (start Spring back end)
+5. 'ng serve' in Smartest/src/main/resources/frontend/smartest-app (start Angular front end)
+6. go to 'http://localhost:4200/'
+7. log in using test credentials (username: admin , password: admin) 
