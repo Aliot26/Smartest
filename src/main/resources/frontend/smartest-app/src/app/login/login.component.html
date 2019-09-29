@@ -1,3 +1,4 @@
+<div class="alert alert-warning" *ngIf="invalidLogin">{{errorMessage}}</div>
 <form class="form-inline">
   <label class="sr-only">Username</label>
   <input type="text" class="form-control mb-2 mr-sm-2" [(ngModel)]="username" name="username" placeholder="username">
@@ -7,7 +8,7 @@
     <input type="password" class="form-control" [(ngModel)]="password" name="password" placeholder="password">
   </div>
 
-  <button type="submit" class="btn btn-primary mb-2" (click)=handleJWTAuthLogin()>Sign in</button>
+  <button type="submit" class="btn btn-primary mb-2" (click)=handleJWTAuthLogin() *ngIf="!userLogged">Sign in</button>
 
 </form>
 <button type="submit" class="btn btn-primary mb-2" (click)=Logout()>Logout</button>

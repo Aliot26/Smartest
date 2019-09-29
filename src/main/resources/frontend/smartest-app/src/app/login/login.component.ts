@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {BasicAuthenticationService} from "../service/basic-authentication.service";
 
@@ -13,11 +13,13 @@ export class LoginComponent implements OnInit {
   password = "";
   errorMessage = 'Invalid Credentials';
   invalidLogin = false;
+  userLogged = false;
 
   constructor(
     private router: Router,
     private basicAuthenticationService: BasicAuthenticationService
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
   }
@@ -26,6 +28,7 @@ export class LoginComponent implements OnInit {
     this.basicAuthenticationService.executeJWTAuthenticationService(this.username, this.password)
       .subscribe(
         data => {
+          this.userLogged = true;
           console.log(data);
           this.router.navigate(['']);
           this.invalidLogin = false;
@@ -34,11 +37,13 @@ export class LoginComponent implements OnInit {
         error => {
           console.log(error);
           this.invalidLogin = true;
+          this.userLogged = false;
         }
       );
   }
 
   Logout() {
+    this.userLogged = false;
     this.basicAuthenticationService.logout();
   }
 }

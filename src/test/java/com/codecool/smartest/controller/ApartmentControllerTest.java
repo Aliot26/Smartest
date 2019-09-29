@@ -10,7 +10,6 @@ import static org.mockito.Mockito.when;
 class ApartmentControllerTest {
 
 
-
     @Test
     void getAllApartments() {
     }

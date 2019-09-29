@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {User} from "./user";
 import {UserDataService} from "../service/user-data.service";
 import {Router} from "@angular/router";
@@ -14,39 +14,39 @@ export class UserComponent implements OnInit {
   message: string;
 
   constructor(private userDataService: UserDataService,
-              private router: Router) { }
-
-  ngOnInit() {
-   this.refreshUsersList();
+              private router: Router) {
   }
 
-  refreshUsersList(){
+  ngOnInit() {
+    this.refreshUsersList();
+  }
+
+  refreshUsersList() {
     this.userDataService.retrieveAllUsers().subscribe(
-      response =>{
+      response => {
         console.log(response);
         this.users = response;
       }
     )
   }
 
-  deleteUser(userId){
+  deleteUser(userId) {
     this.userDataService.deleteUser(userId).subscribe(
-      response =>{
+      response => {
         this.message = `Delete User ${userId} Successful!`;
         this.refreshUsersList();
       }
     )
   }
 
-  updateUser(userId){
+  updateUser(userId) {
     console.log("Update " + userId);
     this.router.navigate(['user', userId]);
   }
 
-  addUser(){
+  addUser() {
     this.router.navigate(['user', -1]);
   }
-
 
 
 }

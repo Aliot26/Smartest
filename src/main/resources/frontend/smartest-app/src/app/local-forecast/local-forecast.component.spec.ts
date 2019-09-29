@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { LocalForecastComponent } from './local-forecast.component';
+import {LocalForecastComponent} from './local-forecast.component';
 
 describe('LocalForecastComponent', () => {
   let component: LocalForecastComponent;
@@ -8,9 +8,9 @@ describe('LocalForecastComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LocalForecastComponent ]
+      declarations: [LocalForecastComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
