@@ -15,7 +15,8 @@ export class LocalForecastComponent implements OnInit {
   lng: number;
   forecast: Observable<any>;
 
-  constructor(private weather: WeatherService) { }
+  constructor(private weather: WeatherService) {
+  }
 
   ngOnInit() {
     if (navigator.geolocation) {

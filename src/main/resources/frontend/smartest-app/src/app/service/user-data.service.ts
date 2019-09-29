@@ -11,23 +11,23 @@ export class UserDataService {
   constructor(private http: HttpClient) {
   }
 
-  public retrieveAllUsers(){
+  public retrieveAllUsers() {
     return this.http.get<User[]>(`${API_URL}/users`);
   }
 
-  public deleteUser(userId){
+  public deleteUser(userId) {
     return this.http.delete(`${API_URL}/user/${userId}`)
   }
 
-  public retrieveUser(userId){
+  public retrieveUser(userId) {
     return this.http.get<User>(`${API_URL}/user/${userId}`)
   }
 
-  public updateUser(userId, user){
+  public updateUser(userId, user) {
     return this.http.put(`${API_URL}/user/${userId}`, user)
   }
 
-  public createUser(user){
+  public createUser(user) {
     return this.http.post(`${API_URL}/users`, user)
   }
 }

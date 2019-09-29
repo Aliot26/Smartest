@@ -49,5 +49,7 @@ values ('nmcure0', 'Nathaniel', 'McUre', 1),
        ('wcaldicotg', 'Wood', 'Caldicot', 1),
        ('emichielih', 'Ezri', 'Michieli', 1),
        ('cweddeburni', 'Connie', 'Weddeburn', 1),
-       ('cguinnanej', 'Cash', 'Guinnane', 1),
-       ('admin', 'first_name_admin', 'last_name_admin', 2);
+       ('cguinnanej', 'Cash', 'Guinnane', 1);
+
+insert into users (username, first_name, last_name, role_id, password)
+values ('admin', 'first_name_admin', 'last_name_admin', 2, '$2a$10$wwjf1LymRzCnWHemgatEzuOgJ.J2/hrlfklnyQj9w6ovpFwudXMcy');
