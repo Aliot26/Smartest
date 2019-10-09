@@ -24,11 +24,11 @@ export class UserDataService {
     return this.http.get<User>(`${API_URL}/user/${userId}`)
   }
 
-  public updateUser(userId, user) {
+  public updateUser(userId, user): Observable<any>  {
     return this.http.put(`${API_URL}/user/${userId}`, user)
   }
 
-  public createUser(user) {
-    return this.http.post(`${API_URL}/users`, user)
+  public createUser(user): Observable<User> {
+    return this.http.post<User>(`${API_URL}/users`, user)
   }
 }

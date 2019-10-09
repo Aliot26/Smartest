@@ -19,11 +19,11 @@ export class ApartmentDataService {
     return this.http.get<Apartment[]>(`${API_URL}/apartments`);
   }
 
-  public retrieveApartment(apId) {
+  public retrieveApartment(apId): Observable<Apartment> {
     return this.http.get<Apartment>(`${API_URL}/apartment/${apId}`);
   }
 
-  public updateApartment(apId, apartment) {
+  public updateApartment(apId, apartment): Observable<any> {
     return this.http.put(`${API_URL}/apartment/${apId}`, apartment);
   }
 }
