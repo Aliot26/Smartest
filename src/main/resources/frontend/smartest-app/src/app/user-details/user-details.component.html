@@ -1,15 +1,15 @@
 <h1>User {{user.username}} Details</h1>
 
 <div class="container">
-  <div class="alert alert-warning" *ngIf="userForm.submitted && userForm.invalid">Please Enter Valid Data
-  </div>
-  <form (ngSubmit)="!userForm.invalid && save()" #userForm="ngForm">
+<!--  <div class="alert alert-warning" *ngIf="userForm.submitted && userForm.invalid">Please Enter Valid Data-->
+<!--  </div>-->
+  <form [formGroup]="userForm" (submit)="save(userForm)">
     <fieldset class="form-group">
       <label>User ID: </label>
       <label>
         <input type="text"
-               [(ngModel)]="user.userId"
-               class="form-control" name="userId" disabled>
+               formControlName="userId"
+               class="form-control"  name="userId">
       </label>
     </fieldset>
 
@@ -17,25 +17,34 @@
       <label>Username: </label>
       <label>
         <input type="text"
-               [(ngModel)]="user.username"
-               class="form-control" name="username" required="required" minlength="2">
+               formControlName="username" value="{{user.username}}"
+               class="form-control" name="username">
       </label>
+
     </fieldset>
 
     <fieldset class="form-group">
       <label>First Name: </label>
       <label>
         <input type="text"
-               [(ngModel)]="user.firstName"
-               class="form-control" name="firstName" required="required" minlength="2">
+               formControlName="firstName" value="{{user.firstName}}"
+               class="form-control" name="firstName">
       </label>
     </fieldset>
     <fieldset class="form-group">
       <label>Last Name: </label>
       <label>
         <input type="text"
-               [(ngModel)]="user.lastName"
-               class="form-control" name="lastName" required="required" minlength="2">
+               formControlName="lastName" value="{{user.lastName}}"
+               class="form-control" name="lastName">
+      </label>
+    </fieldset>
+    <fieldset>
+      <label>Role: </label>
+      <label>
+      <select id="role" formControlName="userRole">
+        <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+      </select>
       </label>
     </fieldset>
 
