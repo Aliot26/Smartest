@@ -20,7 +20,6 @@
                formControlName="username" value="{{user.username}}"
                class="form-control" name="username">
       </label>
-
     </fieldset>
 
     <fieldset class="form-group">
@@ -40,12 +39,14 @@
       </label>
     </fieldset>
     <fieldset>
+      <div >
       <label>Role: </label>
       <label>
-      <select id="role" formControlName="userRole">
-        <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+      <select formControlName="userRole" (change)="getUserRole($event.target.value)" >
+        <option *ngFor="let role of roles" [value]="role.role">{{ role.role }}</option>
       </select>
       </label>
+      </div>
     </fieldset>
 
 
