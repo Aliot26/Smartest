@@ -1,4 +1,6 @@
-deploy:
+branches:
+  only:
+    - travisCI
 language: java
 install:
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
