@@ -27,4 +27,3 @@ matrix:
 
     script:
       - npm run test
-
