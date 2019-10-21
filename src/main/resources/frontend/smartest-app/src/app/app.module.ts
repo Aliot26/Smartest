@@ -1,19 +1,20 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
 import {AppComponent} from './app.component';
 import {ApartmentComponent} from "./apartment/apartment.component";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {NavbarComponent} from './navbar/navbar.component';
 import {FooterComponent} from './footer/footer.component';
 import {RouterModule} from "@angular/router";
 import {AppRoutingModule} from './app-routing.module';
 import {ApartmentDetailsComponent} from './apartment-details/apartment-details.component';
-import {FormsModule} from "@angular/forms";
-import { UserComponent } from './user/user.component';
-import { UserDetailsComponent } from './user-details/user-details.component';
-import { LocalForecastComponent } from './local-forecast/local-forecast.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {UserComponent} from './user/user.component';
+import {UserDetailsComponent} from './user-details/user-details.component';
+import {LocalForecastComponent} from './local-forecast/local-forecast.component';
 import {WeatherService} from "./service/weather.service";
+import {LoginComponent} from './login/login.component';
+import {HttpInterceptorBasicAuthService} from "./service/http-interceptor-auth.service";
 
 @NgModule({
   declarations: [
@@ -24,16 +25,19 @@ import {WeatherService} from "./service/weather.service";
     ApartmentDetailsComponent,
     UserComponent,
     UserDetailsComponent,
-    LocalForecastComponent
+    LocalForecastComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([]),
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [WeatherService],
+  providers: [WeatherService,
+    {provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorBasicAuthService, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule {

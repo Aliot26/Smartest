@@ -19,7 +19,6 @@ public class UserController {
 
     @Autowired
     public UserController(UserRepository userRepository) {
-
         this.userRepository = userRepository;
     }
 
@@ -39,7 +38,7 @@ public class UserController {
             @PathVariable int userId,
             @RequestBody User user) {
         User userUpdated = userRepository.save(user);
-        return new ResponseEntity<User>(user, HttpStatus.OK);
+        return new ResponseEntity<User>(userUpdated, HttpStatus.OK);
     }
 
     @DeleteMapping("/user/{userId}")

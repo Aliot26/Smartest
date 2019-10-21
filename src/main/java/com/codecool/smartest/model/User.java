@@ -2,7 +2,7 @@ package com.codecool.smartest.model;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "users")
 @Table(name = "users", schema = "public")
 public class User {
     @Id
@@ -22,8 +22,9 @@ public class User {
     private String password;
 
     @ManyToOne()
-    @JoinColumn(name = "roleId", foreignKey = @ForeignKey(name = "users_fk_1"), referencedColumnName = "roleId", insertable = false, updatable = false)
+    @JoinColumn(name = "roleId", foreignKey = @ForeignKey(name = "users_fk_1"), referencedColumnName = "roleId", insertable = true, updatable = true)
     private UserRole userRole;
+
 
     public int getUserId() {
         return userId;
