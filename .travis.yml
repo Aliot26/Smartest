@@ -14,9 +14,9 @@ matrix:
       script:
         - mvn install
         - mvn test
-    language: node_js
-    node_js:
-      - '8'
+    - language: node_js
+      node_js:
+        - '8'
 
     cache:
       directories:
