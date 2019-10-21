@@ -12,6 +12,7 @@ class ApartmentControllerTest {
 
     @Test
     void getAllApartments() {
+
     }
 
     @Test
