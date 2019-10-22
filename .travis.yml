@@ -1,4 +1,4 @@
-sudo: required
+sudo: false
 dist: trusty
 branches:
   only:
@@ -7,22 +7,21 @@ matrix:
   include:
     - language: java
       jdk: oraclejdk8
-      before_install:
-        - chmod +x mvnw
       install:
-        - /mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+        - true
       script:
-        - mvn install
+        - mvn clean verify
+        - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
         - mvn test
     - language: node_js
       node_js:
         - '8'
+        -
+      install:
+        - npm install
       cache:
         directories:
           - ./node_modules
-
-      install:
-        - npm install
 
       script:
         - npm run test
