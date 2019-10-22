@@ -10,9 +10,9 @@ matrix:
       before_install:
         - chmod +x mvnw
       install:
-        - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+        - true
       script:
-        - mvn install
+        - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
         - mvn test
     - language: node_js
       node_js:
