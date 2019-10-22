@@ -23,7 +23,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 )
 @AutoConfigureMockMvc
 @TestPropertySource(
-        locations = "classpath:application-integrationtest.properties")
+        locations = "classpath:application.properties")
 public class ApartmentControllerIntegrationTest {
 
     @Autowired
@@ -37,9 +37,7 @@ public class ApartmentControllerIntegrationTest {
 
 
     @Test
-    public void givenApartments_whenGetApartments_thenStatus200() throws Exception {
-
-
+    public void givenApartmentsWhenGetApartmentsThenStatus200() throws Exception {
 
         String token = jwtTokenUtil.generateToken("admin");
 
