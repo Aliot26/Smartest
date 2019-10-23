@@ -2,12 +2,12 @@
   "name": "smartest-app",
   "version": "0.0.0",
   "scripts": {
-    "ng": "../client/src/main/web/node/node_modules/.bin/ng",
-    "start": "../client/src/main/web/node/node_modules/.bin/ng serve",
-    "build": "../client/src/main/web/node/node_modules/.bin/ng build",
-    "test": "../client/src/main/web/node/node_modules/.bin/ng test",
-    "lint": "../client/src/main/web/node/node_modules/.bin/ng lint",
-    "e2e": "../client/src/main/web/node/node_modules/.bin/ng ../../../../../../client/e2e"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "../client/node_modules/.bin/ng test",
+    "lint": "../client/node_modules/.bin/ng lint",
+    "e2e": "../client/node_modules/.bin/ng ../../../../../../client/e2e"
   },
   "private": true,
   "dependencies": {

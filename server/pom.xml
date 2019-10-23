@@ -77,12 +77,7 @@
             <version>RELEASE</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <scope>test</scope>
-            <version>1.4.194</version>
-        </dependency>
+
 
     </dependencies>
 
@@ -99,7 +94,7 @@
                             <outputDirectory>server/target/classes/resources/</outputDirectory >
                             <resources>
                                 <resource>
-                                    <directory>client/src/main/web/dist/np-app/</directory >
+                                    <directory>client/src/main/web/dist/smartest-app/</directory >
                                 </resource>
                             </resources>
                         </configuration>

@@ -1,30 +1,32 @@
 {
-  "$schema": "../client/src/main/web/node/node_modules/@angular/cli/lib/config/schema.json",
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "smartest-app": {
       "projectType": "application",
       "schematics": {},
-      "root": "",
+      "root": "src",
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "../../public",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
+
+            "outputPath": "public",
+            "index": "src/main/web/src/index.html",
+            "main": "src/main/web/src/main.ts",
+            "polyfills": "src/main/web/src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": false,
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              { "glob": "**/*", "input": "src/main/web/src/assets/", "output": "/assets/" },
+              { "glob": "favicon.ico", "input": "src/", "output": "/" }
             ],
+
             "styles": [
-              "src/styles.css"
+              "src/main/web/src/styles.css"
             ],
             "scripts": []
           },
