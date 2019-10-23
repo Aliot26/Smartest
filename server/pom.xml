@@ -12,7 +12,6 @@
     <packaging>war</packaging>
 
 
-
     <properties>
         <java.version>1.8</java.version>
     </properties>
@@ -90,29 +89,36 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>1.6.0</version>
+                <artifactId>maven-resources-plugin</artifactId>
                 <executions>
                     <execution>
+                        <id>copy-resources</id>
                         <phase>validate</phase>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
+                        <goals><goal>copy-resources</goal></goals>
+                        <configuration>
+                            <outputDirectory>server/target/classes/resources/</outputDirectory >
+                            <resources>
+                                <resource>
+                                    <directory>$client/src/main/web/dist/np-app/</directory >
+                                </resource>
+                            </resources>
+                        </configuration>
                     </execution>
                 </executions>
-                <configuration>
-                    <executable>ng</executable>
-                    <workingDirectory>main/resources/frontend/smartest-app</workingDirectory>
-                    <arguments>
-                        <argument>build</argument>
-                    </arguments>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <packagingExcludes>WEB-INF/lib/tomcat-*.jar</packagingExcludes>
+                    <warName>smartest</warName>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 
