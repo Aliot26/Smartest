@@ -99,7 +99,7 @@
                             <outputDirectory>server/target/classes/resources/</outputDirectory >
                             <resources>
                                 <resource>
-                                    <directory>$client/src/main/web/dist/np-app/</directory >
+                                    <directory>client/src/main/web/dist/np-app/</directory >
                                 </resource>
                             </resources>
                         </configuration>

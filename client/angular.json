@@ -1,5 +1,5 @@
 {
-  "$schema": "../server/src/main/resources/frontend/smartest-app/node_modules/@angular/cli/lib/config/schema.json",
+  "$schema": "../client/src/main/web/node/node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
