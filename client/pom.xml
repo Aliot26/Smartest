@@ -23,21 +23,21 @@
 
         <executions>
           <execution>
-            <id>sudo install node and npm</id>
+            <id>install node and npm</id>
             <goals>
               <goal>install-node-and-npm</goal>
             </goals>
           </execution>
 
           <execution>
-            <id>sudo npm install</id>
+            <id>npm install</id>
             <goals>
               <goal>npm</goal>
             </goals>
           </execution>
 
           <execution>
-            <id>sudo npm run build</id>
+            <id>npm run build</id>
             <goals>
               <goal>npm</goal>
             </goals>
