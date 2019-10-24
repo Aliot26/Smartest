@@ -3,6 +3,7 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {ApartmentDetailsComponent} from './apartment-details.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
+import {RouterModule} from "@angular/router";
 
 describe('ApartmentDetailsComponent', () => {
   let component: ApartmentDetailsComponent;
@@ -12,7 +13,9 @@ describe('ApartmentDetailsComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ApartmentDetailsComponent],
       imports: [
-        FormsModule
+        FormsModule,
+        HttpClientModule,
+        RouterModule.forRoot([])
       ]
     })
       .compileComponents();
