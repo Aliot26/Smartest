@@ -1,6 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {UserDetailsComponent} from './user-details.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('UserDetailsComponent', () => {
   let component: UserDetailsComponent;
