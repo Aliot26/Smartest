@@ -7,7 +7,7 @@ describe('ApartmentDataService', () => {
   beforeEach(() => TestBed.configureTestingModule({
     imports: [
       HttpClientModule,
-    ],
+    ]
   }));
 
   it('should be created', () => {
