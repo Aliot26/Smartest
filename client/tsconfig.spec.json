@@ -12,7 +12,7 @@
     "./src/main/web/src/polyfills.ts"
   ],
   "include": [
-    "../../../../../../client/src/**/*.spec.ts",
-    "../../../../../../client/src/**/*.d.ts"
+    "./src/main/web/src/**/*.spec.ts",
+    "./src/main/web/src/**/*.d.ts"
   ]
 }
