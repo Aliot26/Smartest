@@ -15,12 +15,6 @@ module.exports = function (config) {
     client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
-    // files: [
-    //   { pattern: 'src/main/web/src/test.ts', watched: false }
-    // ],
-    // preprocessors: {
-    //   'src/main/web/src/test.ts': ['angular-cli']
-    // },
     coverageIstanbulReporter: {
       dir: require('path').join(__dirname, './coverage/smartest-app'),
       reports: ['html', 'lcovonly', 'text-summary'],
@@ -31,7 +25,13 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ['ChromeHeadlessNoSandbox'],
+    customLaunchers: {
+      ChromeHeadlessNoSandbox: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox']
+      }
+    },
     singleRun: false,
     restartOnFileChange: true
   });
