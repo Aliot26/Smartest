@@ -5,9 +5,9 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "../client/node_modules/.bin/ng test",
-    "lint": "../client/node_modules/.bin/ng lint",
-    "e2e": "../client/node_modules/.bin/ng ../../../../../../client/e2e"
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng ../../../../../../client/e2e"
   },
   "private": true,
   "dependencies": {
