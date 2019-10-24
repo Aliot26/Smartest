@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {ApartmentComponent} from "./apartment/apartment.component";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
@@ -36,7 +36,7 @@ import {HttpInterceptorAuthService} from "./service/http-interceptor-auth.servic
     FormsModule,
     ReactiveFormsModule
   ],
-  schemas: [NO_ERRORS_SCHEMA],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [WeatherService,
     {provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorAuthService, multi: true}],
   bootstrap: [AppComponent]

@@ -2,14 +2,14 @@ import {async, TestBed} from '@angular/core/testing';
 import {AppComponent} from './app.component';
 import {RouterTestingModule} from "@angular/router/testing";
 import {BrowserDynamicTestingModule} from "@angular/platform-browser-dynamic/testing";
-import {NO_ERRORS_SCHEMA} from "@angular/core";
+import {CUSTOM_ELEMENTS_SCHEMA} from "@angular/core";
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [AppComponent],
       imports: [RouterTestingModule, BrowserDynamicTestingModule],
-      schemas: [NO_ERRORS_SCHEMA],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
     }).compileComponents();
   }));
 
