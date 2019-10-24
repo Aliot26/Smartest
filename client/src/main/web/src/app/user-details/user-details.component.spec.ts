@@ -9,7 +9,8 @@ describe('UserDetailsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [UserDetailsComponent]
+      declarations: [UserDetailsComponent],
+      imports: [ReactiveFormsModule]
     })
       .compileComponents();
   }));
