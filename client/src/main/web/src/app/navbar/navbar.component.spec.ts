@@ -15,7 +15,8 @@ describe('NavbarComponent', () => {
       declarations: [NavbarComponent, LoginComponent],
       imports: [
         HttpClientModule,
-        RouterModule.forRoot([])
+        RouterModule.forRoot([]),
+        FormsModule
       ]
     })
       .compileComponents();
