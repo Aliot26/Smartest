@@ -14,7 +14,7 @@ import {UserDetailsComponent} from './user-details/user-details.component';
 import {LocalForecastComponent} from './local-forecast/local-forecast.component';
 import {WeatherService} from "./service/weather.service";
 import {LoginComponent} from './login/login.component';
-import {HttpInterceptorBasicAuthService} from "./service/http-interceptor-auth.service";
+import {HttpInterceptorAuthService} from "./service/http-interceptor-auth.service";
 
 @NgModule({
   declarations: [
@@ -37,7 +37,7 @@ import {HttpInterceptorBasicAuthService} from "./service/http-interceptor-auth.s
     ReactiveFormsModule
   ],
   providers: [WeatherService,
-    {provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorBasicAuthService, multi: true}],
+    {provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorAuthService, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule {
