@@ -2,6 +2,9 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {NavbarComponent} from './navbar.component';
 import {LoginComponent} from "../login/login.component";
+import {HttpClientModule} from "@angular/common/http";
+import {RouterModule} from "@angular/router";
+import {FormsModule} from "@angular/forms";
 
 describe('NavbarComponent', () => {
   let component: NavbarComponent;
@@ -9,7 +12,11 @@ describe('NavbarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [NavbarComponent, LoginComponent]
+      declarations: [NavbarComponent, LoginComponent],
+      imports: [
+        HttpClientModule,
+        RouterModule.forRoot([])
+      ]
     })
       .compileComponents();
   }));
