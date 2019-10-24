@@ -15,7 +15,8 @@ describe('UserDetailsComponent', () => {
       imports: [
         FormsModule,
         ReactiveFormsModule,
-        HttpClientModule
+        HttpClientModule,
+        RouterModule.forRoot([])
       ]
     })
       .compileComponents();
