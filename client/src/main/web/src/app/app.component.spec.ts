@@ -9,7 +9,7 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [AppComponent],
       imports: [RouterTestingModule, BrowserDynamicTestingModule],
-      
+
     }).compileComponents();
   }));
 
