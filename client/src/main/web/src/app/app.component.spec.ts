@@ -2,7 +2,7 @@ import {async, TestBed} from '@angular/core/testing';
 import {AppComponent} from './app.component';
 import {RouterTestingModule} from "@angular/router/testing";
 import {BrowserDynamicTestingModule} from "@angular/platform-browser-dynamic/testing";
-import {CUSTOM_ELEMENTS_SCHEMA} from "@angular/core";
+import {AfterContentInit, Component, CUSTOM_ELEMENTS_SCHEMA, TemplateRef, ViewChild} from "@angular/core";
 import {NavbarComponent} from "./navbar/navbar.component";
 import {FooterComponent} from "./footer/footer.component";
 import {LoginComponent} from "./login/login.component";
@@ -11,6 +11,8 @@ import {UserComponent} from "./user/user.component";
 import {UserDetailsComponent} from "./user-details/user-details.component";
 import {HttpClientModule} from "@angular/common/http";
 import {LocalForecastComponent} from "./local-forecast/local-forecast.component";
+
+
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
