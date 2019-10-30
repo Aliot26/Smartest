@@ -9,6 +9,7 @@ import {LoginComponent} from "./login/login.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {UserComponent} from "./user/user.component";
 import {UserDetailsComponent} from "./user-details/user-details.component";
+import {HttpClientModule} from "@angular/common/http";
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -22,7 +23,9 @@ describe('AppComponent', () => {
       imports: [RouterTestingModule,
         BrowserDynamicTestingModule,
         FormsModule,
-        ReactiveFormsModule,],
+        ReactiveFormsModule,
+        HttpClientModule
+      ],
       // schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
     }).compileComponents();
   }));
