@@ -3,11 +3,13 @@ import {AppComponent} from './app.component';
 import {RouterTestingModule} from "@angular/router/testing";
 import {BrowserDynamicTestingModule} from "@angular/platform-browser-dynamic/testing";
 import {CUSTOM_ELEMENTS_SCHEMA} from "@angular/core";
+import {NavbarComponent} from "./navbar/navbar.component";
+import {FooterComponent} from "./footer/footer.component";
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AppComponent],
+      declarations: [AppComponent, NavbarComponent, FooterComponent],
       imports: [RouterTestingModule, BrowserDynamicTestingModule],
       // schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
     }).compileComponents();
