@@ -6,15 +6,23 @@ import {CUSTOM_ELEMENTS_SCHEMA} from "@angular/core";
 import {NavbarComponent} from "./navbar/navbar.component";
 import {FooterComponent} from "./footer/footer.component";
 import {LoginComponent} from "./login/login.component";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {UserComponent} from "./user/user.component";
 import {UserDetailsComponent} from "./user-details/user-details.component";
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AppComponent, NavbarComponent, FooterComponent, LoginComponent, UserComponent, UserDetailsComponent],
-      imports: [RouterTestingModule, BrowserDynamicTestingModule, FormsModule],
+      declarations: [AppComponent,
+        NavbarComponent,
+        FooterComponent,
+        LoginComponent,
+        UserComponent,
+        UserDetailsComponent],
+      imports: [RouterTestingModule,
+        BrowserDynamicTestingModule,
+        FormsModule,
+        ReactiveFormsModule,],
       // schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
     }).compileComponents();
   }));
