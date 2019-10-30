@@ -10,6 +10,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {UserComponent} from "./user/user.component";
 import {UserDetailsComponent} from "./user-details/user-details.component";
 import {HttpClientModule} from "@angular/common/http";
+import {LocalForecastComponent} from "./local-forecast/local-forecast.component";
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -19,7 +20,8 @@ describe('AppComponent', () => {
         FooterComponent,
         LoginComponent,
         UserComponent,
-        UserDetailsComponent],
+        UserDetailsComponent,
+        LocalForecastComponent],
       imports: [RouterTestingModule,
         BrowserDynamicTestingModule,
         FormsModule,
