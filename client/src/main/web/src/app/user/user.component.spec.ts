@@ -4,6 +4,7 @@ import {UserComponent} from './user.component';
 import {HttpClientModule} from "@angular/common/http";
 import {RouterModule} from "@angular/router";
 import {FormsModule} from "@angular/forms";
+import {HttpClientTestingModule} from "@angular/common/http/testing";
 
 describe('UserComponent', () => {
   let component: UserComponent;
@@ -13,7 +14,7 @@ describe('UserComponent', () => {
     TestBed.configureTestingModule({
       declarations: [UserComponent],
       imports: [
-        HttpClientModule,
+        HttpClientTestingModule,
         RouterModule.forRoot([])
       ]
     })
