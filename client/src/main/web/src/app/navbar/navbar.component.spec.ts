@@ -7,6 +7,7 @@ import {RouterModule} from "@angular/router";
 import {FormsModule} from "@angular/forms";
 import {CUSTOM_ELEMENTS_SCHEMA} from "@angular/core";
 import {BrowserDynamicTestingModule} from "@angular/platform-browser-dynamic/testing";
+import {HttpClientTestingModule} from "@angular/common/http/testing";
 
 describe('NavbarComponent', () => {
   let component: NavbarComponent;
@@ -16,7 +17,7 @@ describe('NavbarComponent', () => {
     TestBed.configureTestingModule({
       declarations: [NavbarComponent, LoginComponent],
       imports: [
-        HttpClientModule,
+        HttpClientTestingModule,
         BrowserDynamicTestingModule,
         RouterModule.forRoot([]),
         FormsModule

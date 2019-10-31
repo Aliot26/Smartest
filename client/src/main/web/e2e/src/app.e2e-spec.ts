@@ -10,7 +10,6 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    console.log(Object.keys(page.getTitleText())+ "++++++++++++++");
     expect(page.getTitleText()).toEqual('smartest-app app is running!');
   });
 
