@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long userId;
+    private int userId;
 
     @Column
     private String username;
@@ -22,11 +22,11 @@ public class User {
     private String password;
 
     @ManyToOne()
-    @JoinColumn(name = "roleId", foreignKey = @ForeignKey(name = "users_fk_1"), referencedColumnName = "roleId", insertable = false, updatable = false)
+    @JoinColumn(name = "roleId", foreignKey = @ForeignKey(name = "users_fk_1"), referencedColumnName = "roleId", insertable = true, updatable = true)
     private UserRole userRole;
 
 
-    public long getUserId() {
+    public int getUserId() {
         return userId;
     }
 

@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {User} from "../user/user";
 import {API_URL} from "../app.constants";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -11,23 +12,23 @@ export class UserDataService {
   constructor(private http: HttpClient) {
   }
 
-  public retrieveAllUsers() {
+  public retrieveAllUsers(): Observable<User[]>  {
     return this.http.get<User[]>(`${API_URL}/users`);
   }
 
-  public deleteUser(userId) {
-    return this.http.delete(`${API_URL}/user/${userId}`)
+  public deleteUser(userId):Observable<User> {
+    return this.http.delete<User>(`${API_URL}/user/${userId}`)
   }
 
-  public retrieveUser(userId) {
+  public retrieveUser(userId): Observable<User> {
     return this.http.get<User>(`${API_URL}/user/${userId}`)
   }
 
-  public updateUser(userId, user) {
+  public updateUser(userId, user): Observable<any>  {
     return this.http.put(`${API_URL}/user/${userId}`, user)
   }
 
-  public createUser(user) {
-    return this.http.post(`${API_URL}/users`, user)
+  public createUser(user): Observable<User> {
+    return this.http.post<User>(`${API_URL}/users`, user)
   }
 }

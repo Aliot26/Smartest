@@ -6,7 +6,7 @@ export class User {
   username: string;
   firstName: string;
   lastName: string;
-  password: number;
+  password: string;
   userRole: UserRole;
 
   constructor(
@@ -14,7 +14,7 @@ export class User {
     username: string,
     firstName: string,
     lastName: string,
-    password: number,
+    password: string,
     userRole: UserRole
   ) {
   }

@@ -30,3 +30,7 @@ build/
 ### VS Code ###
 .vscode/
 application.properties
+wrapper/
+maven-wrapper.jar
+maven-wrapper.properties
+MavenWrapperDownloader.java

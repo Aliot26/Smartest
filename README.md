@@ -18,3 +18,4 @@ TO START:
 5. 'ng serve' in Smartest/src/main/resources/frontend/smartest-app (start Angular front end)
 6. go to 'http://localhost:4200/'
 7. log in using test credentials (username: admin , password: admin) 
+[![Build Status](https://travis-ci.org/Aliot26/Smartest.svg?branch=travisCI)](https://travis-ci.org/Aliot26/Smartest)

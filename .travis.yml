@@ -1,0 +1,28 @@
+sudo: required
+dist: trusty
+branches:
+  only:
+    - travisCI
+matrix:
+  include:
+    - language: java
+      jdk: oraclejdk8
+      before_install:
+        - chmod +x mvnw
+      install:
+        - /mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+      script:
+        - mvn install
+        - mvn test
+    - language: node_js
+      node_js:
+        - '8'
+      cache:
+        directories:
+          - ./node_modules
+
+      install:
+        - npm install
+
+      script:
+        - npm run test

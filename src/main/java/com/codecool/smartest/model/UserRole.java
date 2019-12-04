@@ -16,7 +16,7 @@ public class UserRole {
     @Column
     private String role;
 
-    @OneToMany(targetEntity = User.class, mappedBy = "userRole", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(targetEntity = User.class, mappedBy = "userRole", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     @JsonIgnore
     private List<User> users = new ArrayList<>();
 
