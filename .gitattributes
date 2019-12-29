@@ -1,2 +1,2 @@
-.java - Java
-.js - JavaScript
+* linguist-vendored
+*.java linguist-vendored=false
