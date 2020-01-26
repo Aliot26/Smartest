@@ -1,8 +1,15 @@
 package com.codecool.smartest.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.Objects;
 
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "apartments", schema = "public")
 public class Apartment {
@@ -22,33 +29,6 @@ public class Apartment {
 //    )
 //    public List<User> users = new ArrayList<>();
 
-    public int getApId() {
-        return apId;
-    }
 
-    public int getNumber() {
-        return number;
-    }
 
-    public void setApId(int apId) {
-        this.apId = apId;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Apartment)) return false;
-        Apartment apartment = (Apartment) o;
-        return apId == apartment.apId &&
-                number == apartment.number;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(apId, number);
-    }
 }

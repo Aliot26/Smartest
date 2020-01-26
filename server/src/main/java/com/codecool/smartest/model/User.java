@@ -1,7 +1,14 @@
 package com.codecool.smartest.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity(name = "users")
 @Table(name = "users", schema = "public")
 public class User {
@@ -25,28 +32,4 @@ public class User {
     @JoinColumn(name = "roleId", foreignKey = @ForeignKey(name = "users_fk_1"), referencedColumnName = "roleId", insertable = true, updatable = true)
     private UserRole userRole;
 
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public UserRole getUserRole() {
-        return userRole;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
 }

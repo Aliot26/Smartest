@@ -1,11 +1,17 @@
 package com.codecool.smartest.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "userRole", schema = "public")
 public class UserRole {
@@ -20,15 +26,4 @@ public class UserRole {
     @JsonIgnore
     private List<User> users = new ArrayList<>();
 
-    public int getRoleId() {
-        return roleId;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public List<User> getUsers() {
-        return users;
-    }
 }
