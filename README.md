@@ -23,11 +23,20 @@ the estate as a whole structure. Frontend created with using Angular.
 - Travis CI
 - Maven
 
+[![Build Status](https://travis-ci.org/Aliot26/Smartest.svg?branch=travisCI)](https://travis-ci.org/Aliot26/Smartest)
+
 ## Team members:
 - https://github.com/KALIWWA
 - https://github.com/Aliot26
 
+## Screenshots:
+Start page with the weather's data from https://darksky.net/forecast
+![ScreenShot](https://github.com/Aliot26/Smartest/blob/master/screenshots/start-page.png?raw=true)
+
+
+List of users apartments, which we can see after authorization.
+![ScreenShot](https://github.com/Aliot26/Smartest/blob/master/screenshots/list-users.png?raw=true)
 
 
 
-[![Build Status](https://travis-ci.org/Aliot26/Smartest.svg?branch=travisCI)](https://travis-ci.org/Aliot26/Smartest)
+
