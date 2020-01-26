@@ -31,7 +31,7 @@ the estate as a whole structure. Frontend created with using Angular.
 
 ## Screenshots:
 Start page with the weather's data from https://darksky.net/forecast
-![ScreenShot](https://github.com/Aliot26/Smartest/blob/master/screenshots/start-page.png?raw=true)
+![ScreenShot](https://github.com/Aliot26/Smartest/blob/master/screenshots/start-page-weather.png?raw=true)
 
 
 List of users apartments, which we can see after authorization.
