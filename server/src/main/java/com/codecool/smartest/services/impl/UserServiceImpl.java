@@ -20,13 +20,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> getUsers() {
-        List<User> userList = new ArrayList<>();
-        userRepository.findAll().iterator().forEachRemaining(userList::add);
-        return  userList;
-    }
-
-    @Override
     public User findByUsername(String username) {
         return userRepository.findByUsername(username);
     }
