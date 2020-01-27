@@ -16,10 +16,10 @@ public class Apartment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int apId;
+    private Integer apId;
 
     @Column(name = "number")
-    private int number;
+    private Integer number;
 
 //    @ManyToMany(targetEntity = User.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 //    @JoinTable(
