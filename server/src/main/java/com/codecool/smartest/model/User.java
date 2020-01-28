@@ -31,4 +31,5 @@ public class User {
     @ManyToOne()
     @JoinColumn(name = "roleId", foreignKey = @ForeignKey(name = "users_fk_1"), referencedColumnName = "roleId", insertable = true, updatable = true)
     private UserRole userRole;
+
 }
