@@ -21,6 +21,7 @@ the estate as a whole structure. Frontend created with using Angular.
 - Angular  
 - Junit
 - Travis CI
+- Lombok
 - Maven
 
 [![Build Status](https://travis-ci.org/Aliot26/Smartest.svg?branch=travisCI)](https://travis-ci.org/Aliot26/Smartest)
